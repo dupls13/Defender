@@ -28,8 +28,9 @@ class Defender:
 		self.player = Player(self)
 		self.bullets = pygame.sprite.Group()
 		self.zombies = pygame.sprite.Group()
+		
 
-		#Creates new event for adding zombie 
+		#Creates new event for adding zombie in certain time interval 
 		self.ADDENEMY = pygame.USEREVENT + 1
 		pygame.time.set_timer(self.ADDENEMY, 1000)
 
@@ -47,13 +48,13 @@ class Defender:
 
 			#Deletes bullets if reaches edges of screen 
 			for bullet in self.bullets.copy():
-				if bullet.x <= 0:
+				if bullet.rect.x <= 0:
 					self.bullets.remove(bullet)
-				if bullet.x >= self.settings.SCREEN_WIDTH:
+				if bullet.rect.x >= self.settings.SCREEN_WIDTH:
 					self.bullets.remove(bullet)
-				if bullet.y <= 0:
+				if bullet.rect.y <= 0:
 					self.bullets.remove(bullet)
-				if bullet.y >= self.settings.SCREEN_HEIGHT:
+				if bullet.rect.y >= self.settings.SCREEN_HEIGHT:
 					self.bullets.remove(bullet)
 
 
@@ -114,6 +115,7 @@ class Defender:
 
 
 
+
 	def _update_screen(self):
 		#Redraw the screen during each pass through the loop 
 		self.screen.fill(self.settings.BG_COLOR)
@@ -122,6 +124,9 @@ class Defender:
 			Bullet.draw_bullet()
 		for Zombie in self.zombies.sprites():
 			Zombie.draw()
+
+		collisions = pygame.sprite.groupcollide(
+			self.bullets, self.zombies, True, True)
 
 
 		#Make the most recently drawn screen visible 

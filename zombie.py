@@ -21,15 +21,16 @@ class Zombie(Sprite):
 		self.y = float(self.rect.y)
 
 		#Sets image at random x 
-		self.rect.x = random.randint(10, self.settings.SCREEN_WIDTH - 10)
+		self.rect.x = random.randint(10, self.settings.SCREEN_WIDTH - 35)
 		self.rect.y = 0
 
 		#Random speed of zombie
 		self.speed = random.randint(1, 5)
 
 	def update(self):
-		#Movement of zombie going down screen
+		"""Update the movement for the zombie"""
 		self.rect.y += self.speed
 
 	def draw(self):
+		"""Draws the zombie on the screen"""
 		self.screen.blit(self.image, self.rect)

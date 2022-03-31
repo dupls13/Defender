@@ -5,10 +5,10 @@ class Player:
 	"""A class to manage the player"""
 
 	def __init__(self, df_game):
-
-		self.settings = df_game.settings
-
 		"""Initializes the player and set its starting position"""
+
+		#Get screen settings
+		self.settings = df_game.settings
 		self.screen = df_game.screen 
 		self.screen_rect = df_game.screen.get_rect()
 
@@ -34,13 +34,16 @@ class Player:
 	def update(self):
 		"""Update player position based on movement flag"""
 		if self.moving_left and self.rect.left > 0 :
-			self.rect.x -= 5 
+			self.x -= 5 
 		if self.moving_right and self.rect.right < self.settings.SCREEN_WIDTH:
-			self.rect.x += 5
+			self.x += 5
 		if self.moving_up and self.rect.top > 0:
-			self.rect.y -= 5
+			self.y -= 5
 		if self.moving_down and self.rect.bottom < self.settings.SCREEN_HEIGHT:
-			self.rect.y += 5
+			self.y += 5
+
+		self.rect.x = self.x
+		self.rect.y = self.y 
 
 	def blitme(self):
 		"""Draw the player at the current location"""

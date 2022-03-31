@@ -14,19 +14,22 @@ class Bullet(Sprite):
 		self.screen = df_game.screen 
 		self.settings = df_game.settings
 
-
 		#Load bullet image 
 		self.imageload = pygame.image.load('bullet.png')
-		self.imagescale = pygame.transform.scale(self.imageload, (20,20))
+		self.imagescale = pygame.transform.imageload(self.imageload,
+			10, 10)
 		self.rect = self.imagescale.get_rect()
-
-		#Set bullet initial location 
-		self.rect.midtop = df_game.player.rect.midtop
-
 
 		#Get rect for bullet
 		self.x = float(self.rect.x)
 		self.y = float(self.rect.y)
+
+		#Bullet position origin 
+		self.origin = df_game.player.rect.midbottom
+
+		#Set bullet location equal to player location 
+		self.x = df_game.player.rect.x + 35
+		self.y = df_game.player.rect.y + 35
 
 		#Get mouse x and y 
 		mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -39,23 +42,12 @@ class Bullet(Sprite):
 		self.x_vel = math.cos(self.angle) * self.speed
 		self.y_vel = math.sin(self.angle) * self.speed
 
-		#Set direction of bullet image towards mouse
-		self.rotimage = pygame.transform.rotate(self.imagescale, -math.degrees(self.angle) + 270)
-		self.rect = self.rotimage.get_rect()
-
-
 	def update(self):
-		#Update bullet position  
-
-		self.x += int(self.x_vel)
-		self.y += int(self.y_vel)
-
-		self.rect.x = self.x 
-		self.rect.y = self.y 
-
-
+		#Update bullet position 
+		self.rect.x += int(self.x_vel)
+		self.rect.y += int(self.y_vel)
 
 	def draw_bullet(self):
 		#Draw bullet on screen 
-		self.screen.blit(self.rotimage, self.rect)
+		self.screen.blit(self.imagescale, self.rect)
 
