@@ -12,5 +12,8 @@ class Settings:
 		self.BG_COLOR = (255, 255, 255)
 		pygame.display.set_caption("Defender")
 
+		#Player limit
+		self.player_limit = 3
+
 
 

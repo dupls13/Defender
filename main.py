@@ -3,8 +3,10 @@
 #Package and file imports 
 import sys 
 import pygame
+from time import sleep
 
 from settings import Settings
+from game_stats import GameStats
 from player import Player
 from bullet import Bullet 
 from zombie import Zombie 
@@ -28,6 +30,9 @@ class Defender:
 		self.player = Player(self)
 		self.bullets = pygame.sprite.Group()
 		self.zombies = pygame.sprite.Group()
+
+		#Create an instance to store game statistics 
+		self.stats = GameStats()
 		
 
 		#Creates new event for adding zombie in certain time interval 
@@ -114,6 +119,20 @@ class Defender:
 			self.bullets.add(new_bullet)
 
 
+	def _player_hit(self):
+		"""Respond to the player being hit by a zombie"""
+
+		#Decrease players left
+		self.stats.players_left -= 1
+
+		#Get rid of any remaining zombies and bullets
+		self.zombies.empty()
+		self.bullets.empty()
+
+		#Pause
+		sleep(0.5)
+
+
 
 
 	def _update_screen(self):
@@ -127,6 +146,9 @@ class Defender:
 
 		collisions = pygame.sprite.groupcollide(
 			self.bullets, self.zombies, True, True)
+
+		if pygame.sprite.spritecollideany(self.player, self.zombies):
+			self._player_hit()
 
 
 		#Make the most recently drawn screen visible 
