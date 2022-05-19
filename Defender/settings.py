@@ -15,5 +15,7 @@ class Settings:
 		#Player limit
 		self.player_limit = 3
 
+		self.zombie_points = 50 
+
 
 

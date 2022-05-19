@@ -11,6 +11,7 @@ from player import Player
 from bullet import Bullet 
 from zombie import Zombie 
 from button import Button
+from scoreboard import Scoreboard
 
 clock = pygame.time.Clock()
 
@@ -37,6 +38,9 @@ class Defender:
   
 		#Make the play button 
 		self.play_button = Button(self, "Play")
+
+		#Create game scoreboard
+		self.sb = Scoreboard(self)
 		
 
 		#Creates new event for adding zombie in certain time interval 
@@ -51,9 +55,12 @@ class Defender:
 			#Updates all events
 			clock.tick(60)
 			self._check_events()
-			self.player.update()
-			self.bullets.update()
-			self.zombies.update()
+
+			if self.stats.game_active:
+				self.player.update()
+				self.bullets.update()
+				self.zombies.update()
+
 
 			#Deletes bullets if reaches edges of screen 
 			for bullet in self.bullets.copy():
@@ -117,6 +124,7 @@ class Defender:
 		if self.play_button.rect.collidepoint(mouse_pos) and not self.stats.game_active:
 			self.stats.reset_stats()
 			self.stats.game_active = True
+			self.sb.prep_score()
 
 			self.zombies.empty()
 			self.bullets.empty()
@@ -131,18 +139,30 @@ class Defender:
 			self.bullets.add(new_bullet)
 
 
+	def _check_zombie_bottom(self):
+		"""Check to see if a zombie reaches the bottom of the screen"""
+		screen_rect = self.screen.get_rect()
+		for zombie in self.zombies.sprites():
+			if zombie.rect.bottom >= screen_rect.bottom:
+				self._player_hit()
+
+
 	def _player_hit(self):
 		"""Respond to the player being hit by a zombie"""
+		if self.stats.players_left > 0 :
+			#Decrease players left
+			self.stats.players_left -= 1
 
-		#Decrease players left
-		self.stats.players_left -= 1
+			#Get rid of any remaining zombies and bullets
+			self.zombies.empty()
+			self.bullets.empty()
 
-		#Get rid of any remaining zombies and bullets
-		self.zombies.empty()
-		self.bullets.empty()
+			#Pause
+			sleep(0.5)
+		else:
+			self.stats.game_active = False
 
-		#Pause
-		sleep(0.5)
+
 
 
 
@@ -163,8 +183,19 @@ class Defender:
 		collisions = pygame.sprite.groupcollide(
 			self.bullets, self.zombies, True, True)
 
+		if collisions: 
+			self.stats.score += self.settings.zombie_points
+			self.sb.prep_score()
+
 		if pygame.sprite.spritecollideany(self.player, self.zombies):
 			self._player_hit()
+
+		self._check_zombie_bottom()
+
+
+
+		#Draw the score information 
+		self.sb.show_score()
 
 
 		#Make the most recently drawn screen visible 
