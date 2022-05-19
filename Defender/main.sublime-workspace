@@ -1,0 +1,262 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ini",
+				"initialize_dynamic_settings"
+			],
+			[
+				"ms",
+				"msg_image"
+			],
+			[
+				"_check",
+				"_check_bullet_alien_collisions"
+			],
+			[
+				"available",
+				"available_space_y"
+			],
+			[
+				"alien",
+				"alien_number"
+			],
+			[
+				"_cre",
+				"_create_alien"
+			],
+			[
+				"_update",
+				"_update_bullet"
+			],
+			[
+				"mo",
+				"moving_left"
+			],
+			[
+				"comp",
+				"computer_choice"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"setsyn",
+				"Set Syntax: Python"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Trevor/Documents/Python/FirstGame/3.19.22/main.py",
+		"/C/Users/Trevor/Documents/Python/FirstGame/Game_playerbullets.py",
+		"/C/Users/Trevor/Documents/Python/FirstGame/3.17.22/updated.py",
+		"/C/Users/Trevor/Documents/Python/simplegametut/basics.py",
+		"/C/Users/Trevor/Documents/Python/Practice1",
+		"/C/Users/Trevor/Documents/Python/AlienInvasion/Game2.py",
+		"/C/Users/Trevor/Documents/Python/Game1.py",
+		"/C/Users/Trevor/Documents/Python/Game2.sublime-workspace",
+		"/C/Users/Trevor/Documents/Python/greeter.py",
+		"/C/Users/Trevor/Documents/Python/AlienInvasion.sublime-workspace",
+		"/C/Users/Trevor/Documents/Python/settings.py",
+		"/C/Users/Trevor/Documents/Python/ship.py",
+		"/C/Users/Trevor/Documents/Python/alien_invasion.py",
+		"/C/Users/Trevor/Documents/Python/RockPaperScissors.py",
+		"/C/Users/Trevor/Documents/Python/Space/bullet.py",
+		"/C/Users/Trevor/Documents/Python/Space/ai.py",
+		"/C/Users/Trevor/Documents/Python/Space/setting.py",
+		"/C/Users/Trevor/Documents/Python/Space/alien.py",
+		"/C/Users/Trevor/Documents/Python/Space/alien_invasion1.py",
+		"/C/Users/Trevor/Documents/Python/Space/alien_invasion.py",
+		"/C/Users/Trevor/Downloads/ehmatthes-pcc_2e-1.1-2-g078318e/ship.py",
+		"/C/Users/Trevor/Documents/Python/StockMover/StockMover.py",
+		"/C/Users/Trevor/AppData/Roaming/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/C/Users/Trevor/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/Trevor/Desktop/Python/StockStrategy.py",
+		"/C/Users/Trevor/Desktop/Python/Stock_Youtube.py",
+		"/C/Users/Trevor/Desktop/Python/StockScraper/stockwebsitescraper.py",
+		"/C/Users/Trevor/Desktop/Python/AAPL/alg_trading_strat.py",
+		"/C/Users/Trevor/Desktop/Python/youtube_variables.py",
+		"/C/Users/Trevor/Desktop/Python/youtube_tutorial_cont.py",
+		"/C/Users/Trevor/Desktop/Python/stockwebsitescraper.py",
+		"/C/Users/Trevor/Desktop/Python/RealTimeStockScraper.py",
+		"/C/Users/Trevor/Desktop/Python/alg_trading_strat.py",
+		"/C/Users/Trevor/Desktop/Python/Alien Invasion.py",
+		"/C/Users/Trevor/AppData/Roaming/Sublime Text 3/Packages/User/Python3.sublime-build",
+		"/C/Users/Trevor/Desktop/Python/AAPL/AAPL.csv",
+		"/C/Users/Trevor/Desktop/Python/motorcycles.py",
+		"/C/Users/Trevor/Desktop/Python/cars.py",
+		"/C/Users/Trevor/Desktop/Python/hello_world.py",
+		"/C/Users/Trevor/Desktop/Python/name.py",
+		"/C/Users/Trevor/Desktop/Python/full_name.py",
+		"/C/Users/Trevor/Desktop/Python/bicycles.py",
+		"/C/Users/Trevor/Desktop/Python/apostrophe.py",
+		"/C/Users/Trevor/Documents/Python/hello_world.py"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
