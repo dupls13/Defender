@@ -1,6 +1,6 @@
 # Defender
 
-Defender is a top-arade shooter. Prevent the zombie invasion from reaching the bottom and aim for a personal high score.
+Defender is a top-arcade shooter. Prevent the zombie invasion from reaching the bottom and aim for a personal high score.
 
 Game features (Pygame): 
 - Sprite movement
