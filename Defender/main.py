@@ -13,7 +13,11 @@ from zombie import Zombie
 from button import Button
 from scoreboard import Scoreboard
 
+
 clock = pygame.time.Clock()
+background = pygame.image.load('dirt4.png')
+background_fix = pygame.transform.scale(background, (1200,800))
+
 
 
 
@@ -28,6 +32,11 @@ class Defender:
 
 		self.screen = pygame.display.set_mode(
 			(self.settings.SCREEN_WIDTH, self.settings.SCREEN_HEIGHT))
+
+		
+		
+		
+		#self.screen.blit(self.grass_fix, (0,0))
 
 		self.player = Player(self)
 		self.bullets = pygame.sprite.Group()
@@ -170,6 +179,8 @@ class Defender:
 	def _update_screen(self):
 		#Redraw the screen during each pass through the loop 
 		self.screen.fill(self.settings.BG_COLOR)
+		self.screen.blit(background_fix, [0,0])
+		
 		self.player.blitme()
 		for Bullet in self.bullets.sprites():
 			Bullet.draw_bullet()
